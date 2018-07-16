@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import TextInput from './basicElements/textInput';
 import Button from './basicElements/button';
+import { selectIsFetching } from '../selectors';
+import * as actions from '../actions';
+import types from '../constants/pageTypes';
 
 class LocationInput extends Component {
   constructor(props) {
@@ -13,13 +19,12 @@ class LocationInput extends Component {
   }
 
   setLocation(location) {
-    this.setState(() => ({
-      location
-    }));
+    this.setState(() => ({ location }));
   }
 
   render() {
     const { location } = this.state;
+    const { isFetching, fetchData } = this.props;
     return (<div>
       <TextInput
         value={location}
@@ -30,12 +35,28 @@ class LocationInput extends Component {
       />
       <Button
         value="GO"
-        isLoading={false}
-        onClick={() => {}}
+        isLoading={isFetching}
+        onClick={() => { fetchData(location); }}
       />
       <a>use current location</a>
     </div>);
   }
 }
 
-export default LocationInput;
+LocationInput.propTypes = {
+  fetchData: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = (state, { match: { params: { type } } }) => ({
+  isFetching: selectIsFetching(state, type)
+});
+
+const mapActionsToProps = (dispatch, { match: { params: { type } } }) => ({
+  fetchData: compose(
+    dispatch,
+    !type || type === types.current || !types[type] ? actions.fetchCurrentWeather : actions.fetchForecast
+  )
+});
+
+export default withRouter(connect(mapStateToProps, mapActionsToProps)(LocationInput));

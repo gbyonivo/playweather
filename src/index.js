@@ -23,7 +23,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(<Provider store={store}>
   <BrowserRouter>
     <div>
-      <Route path="/" component={Header} />
+      <Route path="/playweather/:type" component={Header} />
     </div>
   </BrowserRouter>
 </Provider>, document.getElementById('index')); //eslint-disable-line

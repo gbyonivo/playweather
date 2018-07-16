@@ -8,12 +8,14 @@ import {
   ERROR_FETCHING_FORECAST
 } from '../constants/actionTypes';
 
-export const fetchCurrentWeather = () => ({
-  type: FETCH_CURRENT_WEATHER
+export const fetchCurrentWeather = location => ({
+  type: FETCH_CURRENT_WEATHER,
+  payload: { location }
 });
 
-export const fetchForecast = () => ({
-  type: FETCH_FORECAST
+export const fetchForecast = location => ({
+  type: FETCH_FORECAST,
+  payload: { location }
 });
 
 export const doneFetchingCurrentWeather = currentWeather => ({
@@ -26,12 +28,14 @@ export const doneFetchingForecast = forecast => ({
   type: DONE_FETCHING_FORECAST
 });
 
-export const errorFetchingCurrentWeather = () => ({
-  type: ERROR_FETCHING_CURRENT_WEATHER
+export const errorFetchingCurrentWeather = error => ({
+  type: ERROR_FETCHING_CURRENT_WEATHER,
+  payload: { error }
 });
 
-export const errorFetchingForecast = () => ({
-  type: ERROR_FETCHING_FORECAST
+export const errorFetchingForecast = error => ({
+  type: ERROR_FETCHING_FORECAST,
+  payload: { error }
 });
 
 export const selectLocation = location => ({
