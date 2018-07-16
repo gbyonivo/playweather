@@ -1,10 +1,12 @@
 {
   "name": "playweather",
   "version": "1.0.0",
-  "description": "",
+  "description": "react app for weather forecast",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --harmony_proxies node_modules/.bin/jest",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
