@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import LocationListMenu from './components/locationListMenu';
 import reducer from './reducers';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -16,6 +17,8 @@ const store = createStore(
     window.devToolsExtension ? window.devToolsExtension() : f => f //eslint-disable-line
   )
 );
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(<Provider store={store}>
   <BrowserRouter>
