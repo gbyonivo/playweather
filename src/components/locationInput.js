@@ -41,16 +41,18 @@ class LocationInput extends Component {
     const { location, inputError } = this.state;
     const { isFetching, fetchData, errorFetching } = this.props;
     return (<div className={styles.locationInput}>
-      <TextInput
-        value={location}
-        onChange={this.setLocation}
-        label="Location"
-        name="location"
-        placeholder="Manchester, United Kingdom"
-      />
-      {
-        (inputError || errorFetching) && <div className={styles.error}>{inputError || errorFetching}</div>
-      }
+      <div>
+        <TextInput
+          value={location}
+          onChange={this.setLocation}
+          label="Location"
+          name="location"
+          placeholder="Manchester, United Kingdom"
+        />
+        {
+          (inputError || errorFetching) && <div className={styles.error}>{inputError || errorFetching}</div>
+        }
+      </div>
       <Button
         value="SEARCH"
         isLoading={isFetching}
