@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import TextInput from './basicElements/textInput';
 import Button from './basicElements/button';
+import CurrentLocationButton from './currentLocationBtn';
 import { selectIsFetching } from '../selectors';
 import * as actions from '../actions';
 import types from '../constants/pageTypes';
@@ -38,7 +39,10 @@ class LocationInput extends Component {
         isLoading={isFetching}
         onClick={() => { fetchData(location); }}
       />
-      <a>use current location</a>
+      <CurrentLocationButton
+        isFetching={isFetching}
+        fetchData={fetchData}
+      />
     </div>);
   }
 }

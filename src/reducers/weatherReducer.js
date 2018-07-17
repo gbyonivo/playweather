@@ -10,7 +10,7 @@ import {
 
 const initialState = {
   locations: [],
-  activeLocation: undefined,
+  activeLocation: '',
   errorFetchingCurrentWeather: undefined,
   errorFetchingForecast: undefined,
   isFetchingCurrentWeather: false,
@@ -20,32 +20,36 @@ const initialState = {
 };
 
 const ACTION_HANDLERS = {
-  [FETCH_CURRENT_WEATHER]: (state, { location }) => ({
+  [FETCH_CURRENT_WEATHER]: state => ({
     ...state,
-    isFetchingCurrentWeather: true,
-    activeLocation: location,
-    locations: state.locations.includes(location) ? state.locations : [...state.locations, location]
+    isFetchingCurrentWeather: true
   }),
 
-  [FETCH_FORECAST]: (state, { location }) => ({
+  [FETCH_FORECAST]: state => ({
     ...state,
-    isFetchingForecast: true,
-    activeLocation: location,
-    locations: state.locations.includes(location) ? state.locations : [...state.locations, location]
+    isFetchingForecast: true
   }),
 
   [DONE_FETCHING_CURRENT_WEATHER]: (state, { currentWeather }) => ({
     ...state,
     isFetchingCurrentWeather: false,
     currentWeather,
-    errorFetchingCurrentWeather: undefined
+    errorFetchingCurrentWeather: undefined,
+    locations: state.locations.includes(`${currentWeather.name}, ${currentWeather.sys.country}`)
+      ? state.locations
+      : [...state.locations, `${currentWeather.name}, ${currentWeather.sys.country}`],
+    activeLocation: `${currentWeather.name}, ${currentWeather.sys.country}`
   }),
 
   [DONE_FETCHING_FORECAST]: (state, { forecast }) => ({
     ...state,
     isFetchingForecast: false,
     forecast,
-    errorFetchingForecast: undefined
+    errorFetchingForecast: undefined,
+    locations: state.locations.includes(`${forecast.city.name}, ${forecast.city.country}`)
+      ? state.locations
+      : [...state.locations, `${forecast.city.name}, ${forecast.city.country}`],
+    activeLocation: `${forecast.city.name}, ${forecast.city.country}`
   }),
 
   [ERROR_FETCHING_CURRENT_WEATHER]: (state, { error: errorFetchingCurrentWeather }) => ({
