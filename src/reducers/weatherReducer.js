@@ -23,13 +23,15 @@ const ACTION_HANDLERS = {
   [FETCH_CURRENT_WEATHER]: (state, { location }) => ({
     ...state,
     isFetchingCurrentWeather: true,
-    activeLocation: location
+    activeLocation: location,
+    locations: state.locations.includes(location) ? state.locations : [...state.locations, location]
   }),
 
   [FETCH_FORECAST]: (state, { location }) => ({
     ...state,
     isFetchingForecast: true,
-    activeLocation: location
+    activeLocation: location,
+    locations: state.locations.includes(location) ? state.locations : [...state.locations, location]
   }),
 
   [DONE_FETCHING_CURRENT_WEATHER]: (state, { currentWeather }) => ({
