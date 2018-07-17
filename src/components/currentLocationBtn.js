@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
 import Button from './basicElements/button';
 
+import styles from './currentLocationBtn.scss';
+
 const CurrentLocationBtn = ({
   fetchData,
   isFetching,
   coords,
   isGeolocationAvailable,
   isGeolocationEnabled
-}) => <div>
+}) => <div className={styles.currentLocationBtn}>
   {
     !isGeolocationAvailable // eslint-disable-line
       ? <span>Your browser does not support Geolocation</span>
@@ -17,11 +19,11 @@ const CurrentLocationBtn = ({
         ? <div>Geolocation is not enabled</div>
         : coords
           ? <Button
-            value="Current Location"
+            value="Use Current Location"
             isLoading={isFetching}
             onClick={() => { fetchData({ lat: coords.latitude, lon: coords.longitude }); }}
           />
-          : <span>Cant find you</span>
+          : <span>Cant Find You Yet</span>
   }
 </div>;
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './locationListMenuItem.scss';
 
-const LocationListMenuItem = ({ location, selectLocation }) => <li onClick={selectLocation}>
+const LocationListMenuItem = ({ location, selectLocation }) => <li onClick={selectLocation} className={styles.locationListMenuItem}>
   {location}
 </li>;
 

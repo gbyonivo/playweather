@@ -10,6 +10,8 @@ import { selectIsFetching, selectErrorFetching } from '../selectors';
 import * as actions from '../actions';
 import types from '../constants/pageTypes';
 
+import styles from './locationInput.scss';
+
 class LocationInput extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +40,7 @@ class LocationInput extends Component {
   render() {
     const { location, inputError } = this.state;
     const { isFetching, fetchData, errorFetching } = this.props;
-    return (<div>
+    return (<div className={styles.locationInput}>
       <TextInput
         value={location}
         onChange={this.setLocation}
@@ -47,10 +49,10 @@ class LocationInput extends Component {
         placeholder="Manchester, United Kingdom"
       />
       {
-        (inputError || errorFetching) && <div>{inputError || errorFetching}</div>
+        (inputError || errorFetching) && <div className={styles.error}>{inputError || errorFetching}</div>
       }
       <Button
-        value="GO"
+        value="SEARCH"
         isLoading={isFetching}
         onClick={() => { this.fetchData(location); }}
       />

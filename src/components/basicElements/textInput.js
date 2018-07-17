@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './textInput.scss';
+
 const TextInput = ({
   value,
   onChange,
   label,
   placeholder,
   name
-}) => <div>
+}) => <div className={styles.textInput}>
   <label htmlFor={name}></label>
   <input
     type="text"

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { selectIsFetchingForecast, selectForecast } from '../selectors';
 
-const Forecast = ({ forecast }) => <div>
+import styles from './forecast.scss';
+
+const Forecast = ({ forecast }) => <div className={styles.forecast}>
   {forecast.cod ? `forecast-${forecast.cod}` : 'forecasts'}
 </div>;
 

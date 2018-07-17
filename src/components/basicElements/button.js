@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './button.scss';
+
 const Button = ({
   isLoading,
   onClick,
   value
-}) => <div>
+}) => <div className={styles.buttonDiv}>
   {
     isLoading
       ? <span>loading</span>

@@ -8,7 +8,9 @@ import { selectLocations } from '../selectors';
 import * as actions from '../actions';
 import types from '../constants/pageTypes';
 
-const LocationListMenu = ({ locations, fetchData }) => <div>
+import styles from './locationListMenu.scss';
+
+const LocationListMenu = ({ locations, fetchData }) => <div className={styles.locationListMenu}>
   <h2>Recently Viewed</h2>
   <ul>
     {locations.map(location => <LocationListMenuItem key={location} location={location} selectLocation={() => fetchData(location)} />)}
