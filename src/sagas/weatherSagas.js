@@ -29,7 +29,7 @@ export function* fetchCurrentWeatherSaga({ payload: { location } }) {
     const data = yield call(fetchCurrentWeatherFromAPI, createParams(location));
     yield put(doneFetchingCurrentWeather(data));
   } catch (error) {
-    yield put(errorFetchingCurrentWeather('error fetching current weather'));
+    yield put(errorFetchingCurrentWeather('Error fetching current weather'));
   }
 }
 
@@ -43,7 +43,7 @@ export function* fetchForecastSaga({ payload: { location } }) {
     const data = yield call(fetchForecastFromAPI, createParams(location));
     yield put(doneFetchingForecast(data));
   } catch (error) {
-    yield put(errorFetchingForecast('error fetching forecast'));
+    yield put(errorFetchingForecast('Error fetching forecast'));
   }
 }
 
@@ -51,8 +51,7 @@ export function* fetchForecastSaga({ payload: { location } }) {
 export function* sagas() {
   yield all([
     takeLatest(FETCH_CURRENT_WEATHER, fetchCurrentWeatherSaga),
-    takeLatest(FETCH_FORECAST, fetchForecastSaga),
-    // takeLatest(FINISHED_FETCHING_EVENT, subscribe, OUTCOME)
+    takeLatest(FETCH_FORECAST, fetchForecastSaga)
   ]);
 }
 

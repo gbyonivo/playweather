@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import TextInput from './basicElements/textInput';
 import Button from './basicElements/button';
 import CurrentLocationButton from './currentLocationBtn';
-import { selectIsFetching } from '../selectors';
+import { selectIsFetching, selectErrorFetching } from '../selectors';
 import * as actions from '../actions';
 import types from '../constants/pageTypes';
 
@@ -14,18 +14,30 @@ class LocationInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: ''
+      location: '',
+      inputError: undefined
     };
     this.setLocation = this.setLocation.bind(this);
+    this.fetchData = this.fetchData.bind(this);
   }
 
   setLocation(location) {
     this.setState(() => ({ location }));
   }
 
-  render() {
+  fetchData() {
     const { location } = this.state;
-    const { isFetching, fetchData } = this.props;
+    if (location.length === 0) {
+      this.setState(() => ({ inputError: 'location cant be empty' }));
+      return;
+    }
+    this.props.fetchData(location);
+    this.setState(() => ({ inputError: undefined }));
+  }
+
+  render() {
+    const { location, inputError } = this.state;
+    const { isFetching, fetchData, errorFetching } = this.props;
     return (<div>
       <TextInput
         value={location}
@@ -34,10 +46,13 @@ class LocationInput extends Component {
         name="location"
         placeholder="Manchester, United Kingdom"
       />
+      {
+        (inputError || errorFetching) && <div>{inputError || errorFetching}</div>
+      }
       <Button
         value="GO"
         isLoading={isFetching}
-        onClick={() => { fetchData(location); }}
+        onClick={() => { this.fetchData(location); }}
       />
       <CurrentLocationButton
         isFetching={isFetching}
@@ -50,10 +65,12 @@ class LocationInput extends Component {
 LocationInput.propTypes = {
   fetchData: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
+  errorFetching: PropTypes.string,
 };
 
 const mapStateToProps = (state, { match: { params: { type } } }) => ({
-  isFetching: selectIsFetching(state, type)
+  isFetching: selectIsFetching(state, type),
+  errorFetching: selectErrorFetching(state, type)
 });
 
 const mapActionsToProps = (dispatch, { match: { params: { type } } }) => ({

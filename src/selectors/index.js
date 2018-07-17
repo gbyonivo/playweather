@@ -18,3 +18,10 @@ export const selectIsFetching = ({
 }) => !type || type === types.current || !types[type]
   ? isFetchingCurrentWeather
   : isFetchingForecast;
+
+export const selectErrorFetching = ({
+  weatherReducer: { errorFetchingCurrentWeather, errorFetchingForecast },
+  type
+}) => !type || type === types.current || !types[type]
+  ? errorFetchingCurrentWeather
+  : errorFetchingForecast;
