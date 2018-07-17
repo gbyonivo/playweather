@@ -8,6 +8,10 @@ export const selectIsFetchingCurrentWeather = ({ weatherReducer: { isFetchingCur
 
 export const selectIsFetchingForecast = ({ weatherReducer: { isFetchingForecast } }) => isFetchingForecast;
 
+export const selectForecast = ({ weatherReducer: { forecast } }) => forecast;
+
+export const selectCurrentWeather = ({ weatherReducer: { currentWeather } }) => currentWeather;
+
 export const selectIsFetching = ({
   weatherReducer: { isFetchingCurrentWeather, isFetchingForecast },
   type

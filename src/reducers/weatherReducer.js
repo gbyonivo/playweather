@@ -15,8 +15,8 @@ const initialState = {
   errorFetchingForecast: undefined,
   isFetchingCurrentWeather: false,
   isFetchingForecast: false,
-  currentWeather: undefined,
-  forecast: undefined
+  currentWeather: {},
+  forecast: {}
 };
 
 const ACTION_HANDLERS = {
