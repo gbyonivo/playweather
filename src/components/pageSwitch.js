@@ -7,12 +7,14 @@ import * as actions from '../actions';
 import types from '../constants/pageTypes';
 import { selectActiveLocation } from '../selectors';
 
+import styles from './pageSwitch.scss';
+
 const PageSwitch = ({
   fetchData,
   text,
   linkTo,
   activeLocation
-}) => <Link to={linkTo}>
+}) => <Link to={linkTo} className={styles.pageSwitch}>
   <div onClick={() => fetchData(activeLocation)}>{text}</div>
 </Link>;
 

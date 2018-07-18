@@ -1,3 +1,16 @@
 .forecast{
-  
+  padding: 20px;
+  color: #fff;
+  overflow: auto;;
+  .message{
+    font-size: 30px;
+    padding: 40px;
+  }
+  .forecastList{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    font-size: 12px;
+    font-weight: lighter;
+  }
 }

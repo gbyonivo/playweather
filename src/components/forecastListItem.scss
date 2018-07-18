@@ -1,0 +1,19 @@
+.forecastListItem{
+  background: #334465;
+  h4{
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+  }
+  div{
+    padding: 5px;
+  }
+  .weatherIcons{
+    justify-content: center;
+    display: grid;
+    img{
+      width: 37px;
+      height: 37px;
+    }
+  }
+}
