@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('../../../Library/Caches/typescript/2.9/node_modules/@types/html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',

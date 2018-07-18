@@ -10,6 +10,7 @@ import rootSaga from './sagas';
 import Forecast from './components/forecast';
 import Current from './components/current';
 import PageSwitch from './components/pageSwitch';
+import pageTypes from './constants/pageTypes';
 
 import './index.scss';
 import attachList from './hocs/attachList';
@@ -29,10 +30,10 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(<Provider store={store}>
   <BrowserRouter>
     <div>
-      <Route path="/playweather/:type" component={LocationInput} />
-      <Route path="/playweather/forecast" component={attachList(Forecast)} />
-      <Route path="/playweather/current" component={attachList(Current)} />
-      <Route path="/playweather/:type" component={PageSwitch} />
+      <Route path="/:type" component={LocationInput}/>
+      <Route path="/forecast" component={attachList(Forecast, pageTypes.forecast)} />
+      <Route path="/current" component={attachList(Current, pageTypes.current)} />
+      <Route path="/:type" component={PageSwitch} />
     </div>
   </BrowserRouter>
 </Provider>, document.getElementById('index')); //eslint-disable-line

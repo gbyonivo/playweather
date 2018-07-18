@@ -8,9 +8,9 @@ import Button from './basicElements/button';
 import CurrentLocationButton from './currentLocationBtn';
 import { selectIsFetching, selectErrorFetching } from '../selectors';
 import * as actions from '../actions';
-import types from '../constants/pageTypes';
 
 import styles from './locationInput.scss';
+import pageTypes from '../constants/pageTypes';
 
 class LocationInput extends Component {
   constructor(props) {
@@ -27,19 +27,23 @@ class LocationInput extends Component {
     this.setState(() => ({ location }));
   }
 
-  fetchData() {
+  fetchData(currentLocation) {
     const { location } = this.state;
-    if (location.length === 0) {
+    const { fetchData } = this.props;
+    if (!currentLocation && location.length === 0) {
       this.setState(() => ({ inputError: 'location cant be empty' }));
       return;
     }
-    this.props.fetchData(location);
+    fetchData(currentLocation || location);
     this.setState(() => ({ inputError: undefined }));
   }
 
   render() {
     const { location, inputError } = this.state;
-    const { isFetching, fetchData, errorFetching } = this.props;
+    const {
+      isFetching,
+      errorFetching
+    } = this.props;
     return (<div className={styles.locationInput}>
       <div>
         <TextInput
@@ -47,7 +51,7 @@ class LocationInput extends Component {
           onChange={this.setLocation}
           label="Location"
           name="location"
-          placeholder="Manchester, United Kingdom"
+          placeholder="City, Country"
         />
         {
           (inputError || errorFetching) && <div className={styles.error}>{inputError || errorFetching}</div>
@@ -60,7 +64,7 @@ class LocationInput extends Component {
       />
       <CurrentLocationButton
         isFetching={isFetching}
-        fetchData={fetchData}
+        fetchData={this.fetchData}
       />
     </div>);
   }
@@ -69,7 +73,7 @@ class LocationInput extends Component {
 LocationInput.propTypes = {
   fetchData: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
-  errorFetching: PropTypes.string,
+  errorFetching: PropTypes.string
 };
 
 const mapStateToProps = (state, { match: { params: { type } } }) => ({
@@ -80,7 +84,7 @@ const mapStateToProps = (state, { match: { params: { type } } }) => ({
 const mapActionsToProps = (dispatch, { match: { params: { type } } }) => ({
   fetchData: compose(
     dispatch,
-    !type || type === types.current || !types[type] ? actions.fetchCurrentWeather : actions.fetchForecast
+    type === pageTypes.current ? actions.fetchCurrentWeather : actions.fetchForecast
   )
 });
 

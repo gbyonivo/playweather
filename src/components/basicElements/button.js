@@ -9,11 +9,9 @@ const Button = ({
   value
 }) => <div className={styles.buttonDiv}>
   {
-    isLoading
-      ? <span>loading</span>
-      : <button onClick={onClick}>
-        {value}
-      </button>
+    <button onClick={onClick} disabled={isLoading}>
+      {`${value}${isLoading ? '...' : ''}`}
+    </button>
   }
 </div>;
 

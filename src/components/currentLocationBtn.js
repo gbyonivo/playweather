@@ -19,7 +19,7 @@ const CurrentLocationBtn = ({
         ? <div>Geolocation is not enabled</div>
         : coords
           ? <Button
-            value="Use Current Location"
+            value="Current Location"
             isLoading={isFetching}
             onClick={() => { fetchData({ lat: coords.latitude, lon: coords.longitude }); }}
           />

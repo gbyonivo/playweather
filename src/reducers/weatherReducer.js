@@ -5,7 +5,8 @@ import {
   DONE_FETCHING_FORECAST,
   ERROR_FETCHING_CURRENT_WEATHER,
   ERROR_FETCHING_FORECAST,
-  SELECT_LOCATION
+  SELECT_LOCATION,
+  IGNORE_FETCH
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -67,6 +68,14 @@ const ACTION_HANDLERS = {
   [SELECT_LOCATION]: (state, { activeLocation }) => ({
     ...state,
     activeLocation
+  }),
+
+  [IGNORE_FETCH]: state => ({
+    ...state,
+    errorFetchingCurrentWeather: undefined,
+    errorFetchingForecast: undefined,
+    isFetchingCurrentWeather: false,
+    isFetchingForecast: false,
   })
 };
 

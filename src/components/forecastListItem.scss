@@ -1,12 +1,15 @@
 .forecastListItem{
   background: #334465;
+  box-shadow: 1px 1px 1px #000;
   h4{
     text-align: center;
     margin: 0;
     padding: 5px;
+    font-weight: lighter;
   }
   div{
     padding: 5px;
+    text-align: center;
   }
   .weatherIcons{
     justify-content: center;

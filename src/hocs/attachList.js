@@ -3,10 +3,10 @@ import LocationListMenu from '../components/locationListMenu';
 
 import styles from './attachList.scss';
 
-export default (Component) => {
+export default (Component, pageType) => {
   const ListAndReportDetials = props => <div className={styles.listAndReportDetails}>
-    <LocationListMenu {...props}/>
     <Component {...props}/>
+    <LocationListMenu {...props} pageType={pageType}/>
   </div>;
   return ListAndReportDetials;
 };

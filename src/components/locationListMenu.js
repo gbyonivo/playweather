@@ -6,15 +6,19 @@ import { withRouter } from 'react-router-dom';
 import LocationListMenuItem from './locationListMenuItem';
 import { selectLocations } from '../selectors';
 import * as actions from '../actions';
-import types from '../constants/pageTypes';
+import pageTypes from '../constants/pageTypes';
 
 import styles from './locationListMenu.scss';
 
 const LocationListMenu = ({ locations, fetchData }) => <div className={styles.locationListMenu}>
   <h2>Recently Viewed</h2>
-  <ul>
-    {locations.map(location => <LocationListMenuItem key={location} location={location} selectLocation={() => fetchData(location)} />)}
-  </ul>
+  {
+    locations.length > 0
+      ? <ul>
+        {locations.map(location => <LocationListMenuItem key={location} location={location} selectLocation={() => fetchData(location)} />)}
+      </ul>
+      : <em>no recent search</em>
+  }
 </div>;
 
 LocationListMenu.propTypes = {
@@ -26,9 +30,9 @@ const mapStateToProps = state => ({
   locations: selectLocations(state)
 });
 
-const mapActionsToState = (dispatch, { match: { params: { type } } }) => ({
+const mapActionsToState = (dispatch, { pageType }) => ({
   fetchData: compose(
-    dispatch, type === types.current ? actions.fetchCurrentWeather : actions.fetchForecast
+    dispatch, pageType === pageTypes.current ? actions.fetchCurrentWeather : actions.fetchForecast
   )
 });
 

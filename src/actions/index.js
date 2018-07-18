@@ -5,7 +5,8 @@ import {
   DONE_FETCHING_CURRENT_WEATHER,
   DONE_FETCHING_FORECAST,
   ERROR_FETCHING_CURRENT_WEATHER,
-  ERROR_FETCHING_FORECAST
+  ERROR_FETCHING_FORECAST,
+  IGNORE_FETCH
 } from '../constants/actionTypes';
 
 export const fetchCurrentWeather = location => ({
@@ -36,6 +37,10 @@ export const errorFetchingCurrentWeather = error => ({
 export const errorFetchingForecast = error => ({
   type: ERROR_FETCHING_FORECAST,
   payload: { error }
+});
+
+export const ingnoreFetch = () => ({
+  type: IGNORE_FETCH
 });
 
 export const selectLocation = location => ({

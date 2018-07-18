@@ -10,6 +10,7 @@ import {
   doneFetchingForecast,
   errorFetchingCurrentWeather,
   errorFetchingForecast,
+  ingnoreFetch,
 } from '../actions';
 import { fetchCurrentWeatherFromAPI, fetchForecastFromAPI } from '../api/apiService';
 import { FETCH_CURRENT_WEATHER, FETCH_FORECAST } from '../constants/actionTypes';
@@ -23,7 +24,7 @@ export function* fetchCurrentWeatherSaga({ payload: { location } }) {
   try {
     const activeLocation = yield select(selectActiveLocation);
     if (!activeLocation && !location) {
-      yield put(doneFetchingCurrentWeather({}));
+      yield put(ingnoreFetch());
       return;
     }
     const data = yield call(fetchCurrentWeatherFromAPI, createParams(location));
@@ -37,7 +38,7 @@ export function* fetchForecastSaga({ payload: { location } }) {
   try {
     const activeLocation = yield select(selectActiveLocation);
     if (!activeLocation && !location) {
-      yield put(doneFetchingForecast({}));
+      yield put(ingnoreFetch());
       return;
     }
     const data = yield call(fetchForecastFromAPI, createParams(location));
