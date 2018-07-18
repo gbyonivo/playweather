@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const WeatherIcons = ({ weather }) => <span>
+import styles from './weatherIcons.scss';
+
+const WeatherIcons = ({ weather, isWithText }) => <div className={styles.weatherIcons}>
   {
-    weather.map((weatherData, index) => <img
-      src={`http://openweathermap.org/img/w/${weatherData.icon}.png`}
-      alt=""
-      key={`${weatherData.icon}${index}`}
-    />)
+    weather.map((weatherData, index) => <div key={`${weatherData.icon}${index}`} className={styles.weatherIcon}>
+      { isWithText && <div className={styles.text}>{weatherData.main}</div> }
+      <img
+        src={`http://openweathermap.org/img/w/${weatherData.icon}.png`}
+        alt=""
+      />
+    </div>)
   }
-</span>;
+</div>;
 
 WeatherIcons.propTypes = {
-  weather: PropTypes.array.isRequired
+  weather: PropTypes.array.isRequired,
+  isWithText: PropTypes.bool
 };
 
 export default WeatherIcons;

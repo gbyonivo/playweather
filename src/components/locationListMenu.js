@@ -28,8 +28,7 @@ const mapStateToProps = state => ({
 
 const mapActionsToState = (dispatch, { match: { params: { type } } }) => ({
   fetchData: compose(
-    dispatch,
-    !type || type === types.current || !types[type] ? actions.fetchCurrentWeather : actions.fetchForecast
+    dispatch, type === types.current ? actions.fetchCurrentWeather : actions.fetchForecast
   )
 });
 

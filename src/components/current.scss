@@ -1,3 +1,30 @@
 .current{
-  
+  padding: 20px;
+  color: #fff;
+  overflow: auto;;
+  .message{
+    font-size: 30px;
+    padding: 40px;
+  }
+  .currentWeatherDetails{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    .humidity, .temperature, .sunrise, .sunset, .windSpeed, .windDeg{
+      text-align: center;
+      margin-top: 53px;
+      font-size: 30px;
+      font-weight: lighter;
+      color: #ccc;
+      background: rgba(83, 49, 49, 0.2);
+    }
+    .windSpeed, .windDeg{
+      margin-top: 20px;
+      em{
+        font-size: 10px;
+        font-style: italic;
+        margin-right: 5px;
+      }
+    }
+  }
 }

@@ -1,0 +1,14 @@
+.weatherIcons{
+  display: flex;
+  flex-flow: row;
+  flex-direction: row;
+  justify-content: center;
+  .weatherIcon{
+    margin: 10px;
+    .text{
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  
+}
