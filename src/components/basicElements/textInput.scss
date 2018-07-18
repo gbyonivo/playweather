@@ -9,3 +9,19 @@
     font-weight: bold;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .textInput{
+    input{
+      width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .textInput{
+    input{
+      width: 98%;
+    }
+  }
+}

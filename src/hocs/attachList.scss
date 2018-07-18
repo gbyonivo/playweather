@@ -6,3 +6,15 @@
   height: calc(100vh - 100px);
   margin: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .listAndReportDetails{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .listAndReportDetails{
+    grid-template-columns: 1fr;
+  }
+}

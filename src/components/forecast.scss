@@ -14,3 +14,19 @@
     font-weight: lighter;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .forecast{
+    .forecastList{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .forecast{
+    .forecastList{
+      grid-template-columns: 1fr;
+    }
+  }
+}

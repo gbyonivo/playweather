@@ -10,4 +10,13 @@
   flex-flow: row;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 615px) {
+  .locationInput{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1em;
+  }
 }

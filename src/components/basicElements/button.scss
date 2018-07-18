@@ -13,3 +13,19 @@
     text-transform: uppercase;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .buttonDiv{
+    button{
+      width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .buttonDiv{
+    button{
+      width: 98%;
+    }
+  }
+}

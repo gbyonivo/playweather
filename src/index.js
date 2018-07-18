@@ -31,9 +31,9 @@ ReactDOM.render(<Provider store={store}>
   <BrowserRouter>
     <div>
       <Route path="/:type" component={LocationInput}/>
+      <Route path="/:type" component={PageSwitch} />
       <Route path="/forecast" component={attachList(Forecast, pageTypes.forecast)} />
       <Route path="/current" component={attachList(Current, pageTypes.current)} />
-      <Route path="/:type" component={PageSwitch} />
     </div>
   </BrowserRouter>
 </Provider>, document.getElementById('index')); //eslint-disable-line
