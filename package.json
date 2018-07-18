@@ -55,6 +55,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "date-fns": "^1.29.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -90,6 +91,9 @@
         "lines": 80
       }
     },
+    "setupFiles": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "verbose": false,
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

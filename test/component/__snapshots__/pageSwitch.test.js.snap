@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageSwitch component without test renders correctly 1`] = `
+<a
+  className="pageSwitch"
+  href="/forecast"
+  onClick={[Function]}
+>
+  <div
+    onClick={[Function]}
+  >
+    See Current Weather
+  </div>
+</a>
+`;
+
+exports[`PageSwitch component without test renders correctly 2`] = `
+<a
+  className="pageSwitch"
+  href="/forecast"
+  onClick={[Function]}
+>
+  <div
+    onClick={[Function]}
+  >
+    See Current Weather
+  </div>
+</a>
+`;
+
+exports[`PageSwitch component without test renders correctly when isWithText is false 1`] = `
+<a
+  className="pageSwitch"
+  href="/forecast"
+  onClick={[Function]}
+>
+  <div
+    onClick={[Function]}
+  >
+    See Current Weather
+  </div>
+</a>
+`;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationListMenu component renders correctly when isLoading is true 1`] = `
+<li
+  className="locationListMenuItem"
+  onClick={[Function]}
+>
+  play
+</li>
+`;

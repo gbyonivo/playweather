@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather component without test renders correctly when isWithText is false 1`] = `
+<div
+  className="weatherIcons"
+>
+  <div
+    className="weatherIcon"
+  >
+    <img
+      alt=""
+      src="http://openweathermap.org/img/w/10d.png"
+    />
+  </div>
+</div>
+`;
+
+exports[`WeatherIcons component withText renders correctly when isWithText is true 1`] = `
+<div
+  className="weatherIcons"
+>
+  <div
+    className="weatherIcon"
+  >
+    <div
+      className="text"
+    >
+      cloudy
+    </div>
+    <img
+      alt=""
+      src="http://openweathermap.org/img/w/10d.png"
+    />
+  </div>
+</div>
+`;
