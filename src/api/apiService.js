@@ -7,9 +7,9 @@ import {
 } from '../constants/api';
 
 export const fetchCurrentWeatherFromAPI = params => axios
-  .get(`${HOST}/${WEATHER}`, { params: { ...params, appid: API_KEY } })
+  .get(`${HOST}/${WEATHER}`, { params: { ...params, appid: API_KEY, units: 'metric' } })
   .then(response => response.data);
 
 export const fetchForecastFromAPI = params => axios
-  .get(`${HOST}/${FORECAST}`, { params: { ...params, appid: API_KEY } })
+  .get(`${HOST}/${FORECAST}`, { params: { ...params, appid: API_KEY, units: 'metric' } })
   .then(response => response.data);

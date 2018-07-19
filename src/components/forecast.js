@@ -9,7 +9,7 @@ import ForecastListItem from './forecastListItem';
 const Forecast = ({ forecast, activeLocation }) => <div className={styles.forecast}>
   {
     !forecast.cod
-      ? <div className={styles.message}>Type City and Country Code or just City Then Hit Search e.g. Manchester or Manchester, UK</div>
+      ? <div className={styles.message}>Type City and Country Code or City</div>
       : <div>
         <h4>{activeLocation}</h4>
         <div className={styles.forecastList}>

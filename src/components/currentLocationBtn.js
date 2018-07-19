@@ -14,9 +14,9 @@ const CurrentLocationBtn = ({
 }) => <div className={styles.currentLocationBtn}>
   {
     !isGeolocationAvailable // eslint-disable-line
-      ? <span>Your browser does not support Geolocation</span>
+      ? <div className={styles.geoMessage}>Your browser does not support Geolocation</div>
       : !isGeolocationEnabled // eslint-disable-line
-        ? <div>Geolocation is not enabled</div>
+        ? <div className={styles.geoMessage}>Geolocation hmmm not enabled?</div>
         : coords
           ? <Button
             value="Current Location"
@@ -24,7 +24,7 @@ const CurrentLocationBtn = ({
             isLoading={isFetching}
             onClick={() => { fetchData({ lat: coords.latitude, lon: coords.longitude }); }}
           />
-          : <span>Cant Find You Yet</span>
+          : <div className={styles.geoMessage}>Still looking for you. Buddy</div>
   }
 </div>;
 

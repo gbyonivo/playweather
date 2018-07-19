@@ -85,7 +85,7 @@ exports[`Current component renders correctly 1`] = `
             <div
               className="message"
             >
-              Type City and Country Code or just City Then Hit Search e.g. Manchester or Manchester, UK
+              Type City and Country Code or City
             </div>
           </div>
         </CurrentWeather>

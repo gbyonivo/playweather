@@ -12,9 +12,14 @@ export const forecast = {
   city: { name: 'Benue', country: 'NG' },
   list: [
     {
-      dt_txt: 'txt',
+      dt_txt: '2018-05-11 22:00',
       weather: [{ icon: '10d', main: 'terav' }],
-      main: { temp_min: 9, temp_max: 11, humidity: 10 },
+      main: { temp_min: 9, temp_max: 11, humidity: 10, temp: 10 },
+    },
+    {
+      dt_txt: '2018-05-13 22:00',
+      weather: [{ icon: '10d', main: 'terav' }],
+      main: { temp_min: 9, temp_max: 11, humidity: 10, temp: 10 },
     }
   ]
 };

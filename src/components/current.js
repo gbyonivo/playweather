@@ -12,7 +12,7 @@ import { getDateString } from '../functions';
 const CurrentWeather = ({ currentWeather, activeLocation }) => <div className={styles.current}>
   {
     !currentWeather.cod
-      ? <div className={styles.message}>Type City and Country Code or just City Then Hit Search e.g. Manchester or Manchester, UK</div>
+      ? <div className={styles.message}>Type City and Country Code or City</div>
       : <div>
         <h4>{activeLocation}</h4>
         <div className={styles.currentWeatherDetails}>

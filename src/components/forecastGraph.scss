@@ -1,0 +1,15 @@
+.forecastGraph{
+  background: #87a092;
+  display: grid;
+  justify-content: center;
+  h2{
+    text-align: center;
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .forecastGraph{
+    display: none;
+  }
+}

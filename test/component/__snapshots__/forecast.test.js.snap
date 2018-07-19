@@ -85,7 +85,7 @@ exports[`Forecast component renders correctly 1`] = `
             <div
               className="message"
             >
-              Type City and Country Code or just City Then Hit Search e.g. Manchester or Manchester, UK
+              Type City and Country Code or City
             </div>
           </div>
         </Forecast>
@@ -180,9 +180,25 @@ exports[`Forecast component renders correctly 2`] = `
               "cod": 2,
               "list": Array [
                 Object {
-                  "dt_txt": "txt",
+                  "dt_txt": "2018-05-11 22:00",
                   "main": Object {
                     "humidity": 10,
+                    "temp": 10,
+                    "temp_max": 11,
+                    "temp_min": 9,
+                  },
+                  "weather": Array [
+                    Object {
+                      "icon": "10d",
+                      "main": "terav",
+                    },
+                  ],
+                },
+                Object {
+                  "dt_txt": "2018-05-13 22:00",
+                  "main": Object {
+                    "humidity": 10,
+                    "temp": 10,
                     "temp_max": 11,
                     "temp_min": 9,
                   },
@@ -211,9 +227,10 @@ exports[`Forecast component renders correctly 2`] = `
                 <ForecastListItem
                   item={
                     Object {
-                      "dt_txt": "txt",
+                      "dt_txt": "2018-05-11 22:00",
                       "main": Object {
                         "humidity": 10,
+                        "temp": 10,
                         "temp_max": 11,
                         "temp_min": 9,
                       },
@@ -230,7 +247,74 @@ exports[`Forecast component renders correctly 2`] = `
                     className="forecastListItem"
                   >
                     <h4>
-                      txt
+                      2018-05-11 22:00
+                    </h4>
+                    <div
+                      className="weatherIcons"
+                    >
+                      <WeatherIcons
+                        weather={
+                          Array [
+                            Object {
+                              "icon": "10d",
+                              "main": "terav",
+                            },
+                          ]
+                        }
+                      >
+                        <div
+                          className="weatherIcons"
+                        >
+                          <div
+                            className="weatherIcon"
+                            key="10d0"
+                          >
+                            <img
+                              alt=""
+                              src="http://openweathermap.org/img/w/10d.png"
+                            />
+                          </div>
+                        </div>
+                      </WeatherIcons>
+                    </div>
+                    <div>
+                      temp-min: 
+                      9
+                    </div>
+                    <div>
+                      temp-max: 
+                      11
+                    </div>
+                    <div>
+                      humidity: 
+                      10
+                    </div>
+                  </div>
+                </ForecastListItem>
+                <ForecastListItem
+                  item={
+                    Object {
+                      "dt_txt": "2018-05-13 22:00",
+                      "main": Object {
+                        "humidity": 10,
+                        "temp": 10,
+                        "temp_max": 11,
+                        "temp_min": 9,
+                      },
+                      "weather": Array [
+                        Object {
+                          "icon": "10d",
+                          "main": "terav",
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <div
+                    className="forecastListItem"
+                  >
+                    <h4>
+                      2018-05-13 22:00
                     </h4>
                     <div
                       className="weatherIcons"

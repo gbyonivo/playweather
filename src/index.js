@@ -11,6 +11,7 @@ import Forecast from './components/forecast';
 import Home from './components/home';
 import Current from './components/current';
 import PageSwitch from './components/pageSwitch';
+import ForecastGraph from './components/forecastGraph';
 import pageTypes from './constants/pageTypes';
 
 import './index.scss';
@@ -35,6 +36,7 @@ ReactDOM.render(<Provider store={store}>
       <Route path="/:type" component={LocationInput}/>
       <Route path="/:type" component={PageSwitch} />
       <Route path="/forecast" component={attachList(Forecast, pageTypes.forecast)} />
+      <Route path="/forecast" component={ForecastGraph} />
       <Route path="/current" component={attachList(Current, pageTypes.current)} />
     </div>
   </BrowserRouter>
