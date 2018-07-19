@@ -17,21 +17,3 @@ exports[`LocationListMenu component without test renders correctly 1`] = `
   </ul>
 </div>
 `;
-
-exports[`PageSwitch component without test renders correctly 1`] = `
-<div
-  className="locationListMenu"
->
-  <h2>
-    Recently Viewed
-  </h2>
-  <ul>
-    <li
-      className="locationListMenuItem"
-      onClick={[Function]}
-    >
-      machetser, uk
-    </li>
-  </ul>
-</div>
-`;

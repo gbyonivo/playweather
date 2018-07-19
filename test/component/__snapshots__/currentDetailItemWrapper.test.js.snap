@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentDetailItemWrapper component renders correctly 1`] = `
+<div
+  className="currentDetailItemWrapper"
+>
+  <h2>
+    playweather
+  </h2>
+  <div />
+</div>
+`;

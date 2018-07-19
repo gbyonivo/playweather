@@ -6,13 +6,8 @@ import { selectIsFetchingCurrentWeather, selectCurrentWeather, selectActiveLocat
 import styles from './current.scss';
 import WeatherIcons from './weatherIcons';
 import DIW from './currentDetailItemWrapper';
+import { getDateString } from '../functions';
 
-const getDateString = (timestamp) => {
-  const date = new Date(timestamp * 1000);
-  const hours = `0${date.getHours()}`;
-  const mins = `0${date.getMinutes()}`;
-  return `${hours.substr(-2)}:${mins.substr(-2)}`;
-};
 
 const CurrentWeather = ({ currentWeather, activeLocation }) => <div className={styles.current}>
   {

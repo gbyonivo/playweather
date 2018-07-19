@@ -27,17 +27,3 @@ exports[`PageSwitch component without test renders correctly 2`] = `
   </div>
 </a>
 `;
-
-exports[`PageSwitch component without test renders correctly when isWithText is false 1`] = `
-<a
-  className="pageSwitch"
-  href="/forecast"
-  onClick={[Function]}
->
-  <div
-    onClick={[Function]}
-  >
-    See Current Weather
-  </div>
-</a>
-`;

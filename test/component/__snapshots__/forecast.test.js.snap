@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forecast component renders correctly 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "match": Object {
+          "params": Object {
+            "type": "current",
+          },
+        },
+        "pathname": "/",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "match": Object {
+              "params": Object {
+                "type": "current",
+              },
+            },
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "match": Object {
+            "params": Object {
+              "type": "current",
+            },
+          },
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Connect(Forecast)
+        fetchData={[Function]}
+      >
+        <Forecast
+          activeLocation="venice"
+          dispatch={[Function]}
+          fetchData={[Function]}
+          forecast={Object {}}
+          isFetchingForecast={false}
+        >
+          <div
+            className="forecast"
+          >
+            <div
+              className="message"
+            >
+              Type City and Country Code or just City Then Hit Search e.g. Manchester or Manchester, UK
+            </div>
+          </div>
+        </Forecast>
+      </Connect(Forecast)>
+    </Provider>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`Forecast component renders correctly 2`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "match": Object {
+          "params": Object {
+            "type": "current",
+          },
+        },
+        "pathname": "/",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "match": Object {
+              "params": Object {
+                "type": "current",
+              },
+            },
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "match": Object {
+            "params": Object {
+              "type": "current",
+            },
+          },
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Connect(Forecast)
+        fetchData={[Function]}
+      >
+        <Forecast
+          activeLocation="venice"
+          dispatch={[Function]}
+          fetchData={[Function]}
+          forecast={
+            Object {
+              "cod": 2,
+              "list": Array [
+                Object {
+                  "dt_txt": "txt",
+                  "main": Object {
+                    "humidity": 10,
+                    "temp_max": 11,
+                    "temp_min": 9,
+                  },
+                  "weather": Array [
+                    Object {
+                      "icon": "10d",
+                      "main": "terav",
+                    },
+                  ],
+                },
+              ],
+            }
+          }
+          isFetchingForecast={false}
+        >
+          <div
+            className="forecast"
+          >
+            <div>
+              <h4>
+                venice
+              </h4>
+              <div
+                className="forecastList"
+              >
+                <ForecastListItem
+                  item={
+                    Object {
+                      "dt_txt": "txt",
+                      "main": Object {
+                        "humidity": 10,
+                        "temp_max": 11,
+                        "temp_min": 9,
+                      },
+                      "weather": Array [
+                        Object {
+                          "icon": "10d",
+                          "main": "terav",
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <div
+                    className="forecastListItem"
+                  >
+                    <h4>
+                      txt
+                    </h4>
+                    <div
+                      className="weatherIcons"
+                    >
+                      <WeatherIcons
+                        weather={
+                          Array [
+                            Object {
+                              "icon": "10d",
+                              "main": "terav",
+                            },
+                          ]
+                        }
+                      >
+                        <div
+                          className="weatherIcons"
+                        >
+                          <div
+                            className="weatherIcon"
+                            key="10d0"
+                          >
+                            <img
+                              alt=""
+                              src="http://openweathermap.org/img/w/10d.png"
+                            />
+                          </div>
+                        </div>
+                      </WeatherIcons>
+                    </div>
+                    <div>
+                      temp-min: 
+                      9
+                    </div>
+                    <div>
+                      temp-max: 
+                      11
+                    </div>
+                    <div>
+                      humidity: 
+                      10
+                    </div>
+                  </div>
+                </ForecastListItem>
+              </div>
+            </div>
+          </div>
+        </Forecast>
+      </Connect(Forecast)>
+    </Provider>
+  </Router>
+</MemoryRouter>
+`;

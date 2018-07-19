@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastListItem component renders correctly 1`] = `
+<div
+  className="forecastListItem"
+>
+  <h4>
+    dttxt
+  </h4>
+  <div
+    className="weatherIcons"
+  >
+    <div
+      className="weatherIcons"
+    />
+  </div>
+  <div>
+    temp-min: 
+    
+  </div>
+  <div>
+    temp-max: 
+    
+  </div>
+  <div>
+    humidity: 
+    
+  </div>
+</div>
+`;
