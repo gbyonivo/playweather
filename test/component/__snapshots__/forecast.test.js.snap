@@ -173,6 +173,10 @@ exports[`Forecast component renders correctly 2`] = `
           fetchData={[Function]}
           forecast={
             Object {
+              "city": Object {
+                "country": "NG",
+                "name": "Benue",
+              },
               "cod": 2,
               "list": Array [
                 Object {

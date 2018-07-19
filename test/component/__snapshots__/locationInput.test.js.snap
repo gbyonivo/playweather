@@ -17,3 +17,5 @@ exports[`LocationInput component renders correctly 1`] = `
   />
 </Provider>
 `;
+
+exports[`LocationInput component renders correctly 2`] = `<div />`;

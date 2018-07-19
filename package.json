@@ -76,7 +76,14 @@
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.js"
+      "src/api/**/*.js",
+      "src/actions/**/*.js",
+      "src/components/**/*.js",
+      "src/functions/**/*.js",
+      "src/hocs/**/*.js",
+      "src/reducers/**/*.js",
+      "src/sagas/**/*.js",
+      "src/selectors/**/*.js"
     ],
     "coverageReporters": [
       "text",

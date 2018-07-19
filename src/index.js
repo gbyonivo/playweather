@@ -8,6 +8,7 @@ import LocationInput from './components/locationInput';
 import reducer from './reducers';
 import rootSaga from './sagas';
 import Forecast from './components/forecast';
+import Home from './components/home';
 import Current from './components/current';
 import PageSwitch from './components/pageSwitch';
 import pageTypes from './constants/pageTypes';
@@ -30,6 +31,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(<Provider store={store}>
   <BrowserRouter>
     <div>
+      <Route path="/" component={Home} exact />
       <Route path="/:type" component={LocationInput}/>
       <Route path="/:type" component={PageSwitch} />
       <Route path="/forecast" component={attachList(Forecast, pageTypes.forecast)} />

@@ -20,6 +20,7 @@ const CurrentLocationBtn = ({
         : coords
           ? <Button
             value="Current Location"
+            name="currentLocationBtn"
             isLoading={isFetching}
             onClick={() => { fetchData({ lat: coords.latitude, lon: coords.longitude }); }}
           />

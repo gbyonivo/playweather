@@ -176,7 +176,9 @@ exports[`Current component renders correctly 2`] = `
                 "humidity": "x",
                 "temp": "10",
               },
+              "name": "Benue",
               "sys": Object {
+                "country": "NG",
                 "sunrise": 1531694193,
                 "sunset": 1531694193,
               },

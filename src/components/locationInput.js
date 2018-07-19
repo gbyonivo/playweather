@@ -59,6 +59,7 @@ class LocationInput extends Component {
       </div>
       <Button
         value="SEARCH"
+        name="searchBtn"
         isLoading={isFetching}
         onClick={() => { this.fetchData(location); }}
       />
